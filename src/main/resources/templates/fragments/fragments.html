@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<!-- Input Field Fragment -->
+<div th:fragment="inputField(label, field, type)">
+    <div class="mb-2">
+        <label th:for="${field}" class="form-label" th:text="${label}"></label>
+        <input th:field="*{__${field}__}" th:type="${type}" class="form-control form-control-sm" th:id="${field}">
+    </div>
+</div>
+
+<!-- Form Buttons Fragment -->
+<div th:fragment="formButtons(backUrl)">
+    <div class="d-flex justify-content-between">
+        <a th:href="${backUrl}" class="btn btn-secondary btn-sm">Back</a>
+        <button type="submit" class="btn btn-success btn-sm">Save</button>
+    </div>
+</div>
+
+</body>
+</html>
